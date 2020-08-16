@@ -1,29 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
+import { Component } from 'react';
+import Weather from './Weather';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.yellowView}><Text>hellow yellow!</Text></View>
-      <View style={styles.blueView}><Text>hellow blue!</Text></View>
-    <StatusBar style="auto" />
-    </View >
-  );
+export default class App extends Component {
+  state = {
+    isLoaded: true
+  }
+  render() {
+    const { isLoaded } = this.state;
+    return ( 
+      <View style={styles.container}>
+        {isLoaded ? <Weather></Weather>  : <View style={styles.loading}><Text style={styles.loadingText}>Gettion the fucking weather...</Text></View>}
+        <View style={styles.redView}></View>
+      </View >
+    );
+  }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    justifyContent: 'center',
   },
-  yellowView: {
+  loading: {
     flex: 1,
-    backgroundColor: 'yellow',
+    backgroundColor: '#FDF6AA',
+    justifyContent: 'flex-end'
   },
-  blueView: {
-    flex: 3,
-    backgroundColor: 'blue'
+  loadingText: {
+    fontSize: 38,
+    marginBottom: 100,
+    paddingLeft: 25
   }
 });
