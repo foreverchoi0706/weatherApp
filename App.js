@@ -9,9 +9,10 @@ export default class App extends Component {
   }
   render() {
     const { isLoaded } = this.state;
-    return ( 
+    return (
       <View style={styles.container}>
-        {isLoaded ? <Weather></Weather>  : <View style={styles.loading}><Text style={styles.loadingText}>Gettion the fucking weather...</Text></View>}
+        {isLoaded ?
+        <Weather/> : <View style={styles.loading}><Text style={styles.loadingText}>Gettion the fucking weather...</Text></View>}
         <View style={styles.redView}></View>
       </View >
     );

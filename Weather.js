@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native'
-import { LinearGradient } from 'expo'
+import { LinearGradient } from 'expo-linear-gradient'
 
 export default class Weather extends Component {
     render() {
         return (
-            <LinearGradient Colors={['#00C6Fb', '#0056EA']} style={styles.container}></LinearGradient>
+            <LinearGradient colors={['#00C6Fb', '#0056EA']} style={styles.container}/>
         );
     }
 }
