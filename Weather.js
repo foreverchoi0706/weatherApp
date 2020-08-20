@@ -89,8 +89,8 @@ function Weather({ temperature, temperatureName }) {
     );
 }
 
-Weather.PropTypes = {
-    temp: PropTypes.number.isRequired,
+Weather.propTypes = {
+    temperature: PropTypes.number.isRequired,
     temperatureName: PropTypes.string.isRequired
 }
 
